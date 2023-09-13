@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+OBSIDIAN_VAULT_PATH="/home/garrido/Documents/Obsidian Vault"
+
+
+git -C "$OBSIDIAN_VAULT_PATH" add .
+git -C "$OBSIDIAN_VAULT_PATH" commit -m "$(date +'%y-%m-%d') daily backup"
+git -C "$OBSIDIAN_VAULT_PATH" push origin main
+git -C "$OBSIDIAN_VAULT_PATH" log -1 > "$OBSIDIAN_VAULT_PATH/.last_commit"
